@@ -1,0 +1,27 @@
+{
+  "name": "getbrightness",
+  "version": "1.0.0",
+  "description": "A function to get the brightness of a given colour",
+  "repository": "github.com/keithamus/getbrightness",
+  "license": "MIT",
+  "author": "Keith Cirkel (https://keithcirkel.co.uk/)",
+  "files": [
+    "index.js",
+    "inex.umd.js"
+  ],
+  "main": "index.umd.js",
+  "module": "index.js",
+  "scripts": {
+    "prepare": "rollup --format=umd --file=index.umd.js --output.name getBrightness  -- index.js",
+    "test": "node -r esm test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-github": "^2.0.0",
+    "esm": "^3.2.25",
+    "flow-bin": "^0.98.1",
+    "rollup": "^1.12.3",
+    "typescript": "^3.4.5"
+  }
+}
