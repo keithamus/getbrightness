@@ -7,14 +7,30 @@
   "author": "Keith Cirkel (https://keithcirkel.co.uk/)",
   "files": [
     "index.js",
-    "inex.umd.js"
+    "inex.umd.js",
+    "*.flow",
+    "*.d.ts"
   ],
   "main": "index.umd.js",
   "module": "index.js",
   "scripts": {
-    "prepare": "rollup --format=umd --file=index.umd.js --output.name getBrightness  -- index.js",
-    "test": "node -r esm test.js"
+    "prepare": "rollup --format=umd --file=index.umd.js --output.name getBrightness -- index.js",
+    "lint": "github-lint",
+    "test": "node -r esm test.js && tsc --noEmit --strict index.d.ts"
   },
+  "eslintConfig": {
+    "extends": [
+      "plugin:github/browser",
+      "plugin:github/es6",
+      "plugin:github/flow"
+    ],
+    "rules": {
+      "no-console": "off"
+    }
+  },
+  "eslintIgnore": [
+    "index.umd.js"
+  ],
   "dependencies": {},
   "devDependencies": {
     "eslint": "^5.16.0",
